@@ -41,9 +41,11 @@
     <ItemGroup>
         <Compile Include="0001-Two Sum\Solution.cs" />
         <Compile Include="0003-Longest Substring Without Characters\Solution.cs" />
+        <Compile Include="0009-Palindrome Number\Solution.cs" />
         <Compile Include="0026-Remove Duplicates from Sorted Array\Solution.cs" />
         <Compile Include="0066-Plus One\Solution.cs" />
         <Compile Include="0069-Sqrt(x)\Solution.cs" />
+        <Compile Include="0121-Best Time to Buy and Sell Stock\Solution.cs" />
         <Compile Include="0136-Single Number\Solution.cs" />
         <Compile Include="0349- Intersection of Two Arrays\Solution.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />

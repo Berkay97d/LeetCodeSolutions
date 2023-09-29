@@ -7,14 +7,13 @@ namespace LeetCodeSolutions._0009_Palindrome_Number
         
         private static void Main()
         {
-            Console.WriteLine(IsPalindrome(100000001));
+            Console.WriteLine(IsPalindrome(10));
         }
         
         private static bool IsPalindrome(int x)
         {
             if (x < 0) return false;
             if (x < 10) return true;
-            if (x == 10) return false;
 
             int digitCount;
             long digitChecker = 10;     //using long because if int x > int32.max digit checker be greater than int32.max    

@@ -1,33 +1,35 @@
-﻿namespace LeetCodeSolutions._0026_Remove_Duplicates_from_Sorted_Array
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace LeetCodeSolutions._0026_Remove_Duplicates_from_Sorted_Array
 {
     public class Solution
     {
-        public int RemoveDuplicates(int[] nums)
+        private static void Main()
         {
-            int counter = 0;
-            
-            for (int i = 0; i < nums.Length/2; i++)
-            {
-                if (nums[i] == nums[i+1])
-                {
-                    nums[i] = -101;
-                }
+            int[] nums = new[] {0,0,0,0,0,0,0,0,0,0,1, 2, 3, 4, 5, 6,6};
+        }
 
-                if (nums[nums.Length - (i+1)] == nums[nums.Length - (i+2)])
-                {
-                    nums[nums.Length - (i + 1)] = -101;
-                }
-            }
+        
+        private static int RemoveDuplicates(int[] nums)         //BRUT-FORCE USED, IMPROVE IT !!!
+        {
+            List<int> newNums = new List<int>();
 
             foreach (var num in nums)
             {
-                if (num != -101)
+                if (!newNums.Contains(num))
                 {
-                    counter++;
+                    newNums.Add(num);
                 }
             }
 
-            return counter;
+            for (int i = 0; i < newNums.Count; i++)
+            {
+                nums[i] = newNums[i];
+            }
+            
+            return newNums.Count;
         }
     }
 }

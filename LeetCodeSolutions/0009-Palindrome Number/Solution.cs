@@ -3,13 +3,6 @@
 namespace LeetCodeSolutions._0009_Palindrome_Number
 {
     public class Solution {
-        
-        
-        private static void Main()
-        {
-            Console.WriteLine(IsPalindrome(10));
-        }
-        
         private static bool IsPalindrome(int x)
         {
             if (x < 0) return false;

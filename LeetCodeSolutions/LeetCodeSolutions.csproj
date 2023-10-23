@@ -40,7 +40,6 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="0001-Two Sum\Solution.cs" />
-        <Compile Include="0003-Longest Substring Without Characters\Solution.cs" />
         <Compile Include="0009-Palindrome Number\Solution.cs" />
         <Compile Include="0026-Remove Duplicates from Sorted Array\Solution.cs" />
         <Compile Include="0066-Plus One\Solution.cs" />

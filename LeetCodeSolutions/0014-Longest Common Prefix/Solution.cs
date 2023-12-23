@@ -2,10 +2,7 @@
 {
     public class Solution
     {
-        public static void Main()
-        {
-            
-        }
+        
 
         private string LongestCommonPrefix(string[] strs)
         {

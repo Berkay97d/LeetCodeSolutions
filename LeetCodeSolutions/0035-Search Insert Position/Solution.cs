@@ -4,10 +4,7 @@ namespace LeetCodeSolutions._0035_Search_Insert_Position
 {
     public class Solution
     {
-        public static void Main()
-        {
-          
-        }
+       
         
         public int SearchInsert(int[] nums, int target)
         {

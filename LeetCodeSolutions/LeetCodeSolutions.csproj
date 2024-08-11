@@ -51,6 +51,7 @@
         <Compile Include="0035-Search Insert Position\Solution.cs" />
         <Compile Include="0058- Length of Last Word\Solution.cs" />
         <Compile Include="0066-Plus One\Solution.cs" />
+        <Compile Include="0067-Add Binary\Solution.cs" />
         <Compile Include="0069-Sqrt(x)\Solution.cs" />
         <Compile Include="0121-Best Time to Buy and Sell Stock\Solution.cs" />
         <Compile Include="0136-Single Number\Solution.cs" />

@@ -10,7 +10,7 @@ namespace LeetCodeSolutions._0067_Add_Binary
             Console.WriteLine(AddBinary("1010", "101"));
         }
         
-        public static string AddBinary(string a, string b)
+        public static string AddBinary(string a, string b) //SAME APPROACH SOLUTION: https://leetcode.com/problems/add-binary/solutions/2978983/c-126-lines
         {
             char[] extended;
             bool isALonger = false;

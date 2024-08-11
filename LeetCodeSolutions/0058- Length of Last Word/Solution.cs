@@ -4,10 +4,7 @@ namespace LeetCodeSolutions._0058__Length_of_Last_Word
 {
     public class Solution
     {
-        public static void Main()
-        {
-          Console.WriteLine(LengthOfLastWord(" "));
-        }
+        
         
         public static int LengthOfLastWord(string s) //ber kay  length 6    last eleman s[5]
         {

@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Diagnostics;
+using System.Text;
 
 namespace LeetCodeSolutions._0067_Add_Binary
 {
@@ -10,103 +10,37 @@ namespace LeetCodeSolutions._0067_Add_Binary
             Console.WriteLine(AddBinary("1010", "101"));
         }
         
-        public static string AddBinary(string a, string b) //SAME APPROACH SOLUTION: https://leetcode.com/problems/add-binary/solutions/2978983/c-126-lines
+        public static string AddBinary(string a, string b)
         {
-            char[] extended;
-            bool isALonger = false;
-            
-            if (a.Length > b.Length)
+            StringBuilder result = new StringBuilder();
+            int carry = 0;
+            int i = a.Length - 1;
+            int j = b.Length - 1;
+
+            while (i >= 0 || j >= 0 || carry > 0)
             {
-                isALonger = true;
+                int sum = carry;
+
+                if (i >= 0)
+                {
+                    sum += a[i] - '0';
+                    i--;
+                }
+
+                if (j >= 0)
+                {
+                    sum += b[j] - '0';
+                    j--;
+                }
                 
-                extended = new char[a.Length];
-                int diffWhenALonger = a.Length - b.Length;
-
-                for (int i = 0; i < extended.Length; i++)
-                {
-                    if (i+1 <= diffWhenALonger)
-                    {
-                        extended[i] = '0';
-                    }
-                    else
-                    {
-                        extended[i] = b[i - diffWhenALonger];
-                    }
-                }
-            }
-            else
-            {
-                extended = new char[b.Length];
-                int diffWhenBLonger = b.Length - a.Length;
+                carry = sum / 2;
                 
-                for (int i = 0; i < extended.Length; i++)
-                {
-                    if (i+1 <= diffWhenBLonger)
-                    {
-                        extended[i] = '0';
-                    }
-                    else
-                    {
-                        extended[i] = b[i - diffWhenBLonger];
-                    }
-                }
+                result.Append(sum % 2);
             }
-
-            bool hasRemainig = false;
-            char[] result = new char[extended.Length];
             
-            if (isALonger)
-            {
-                for (int i = a.Length-1; i>= 0; i--)
-                {
-                    if (extended[i] == a[i]) //AYNI
-                    {
-                        if (hasRemainig) //ELDE VARSA
-                        {
-                            if (extended[i] == '1') // 1SE
-                            {
-                                result[i] = '1';
-                                hasRemainig = true;
-                            }
-                            else // 0SA
-                            {
-                                result[i] = '1';
-                                hasRemainig = false;
-                            }
-                        }
-                        else //ELDE YOKSA
-                        {
-                            if (extended[i] == '1') // 1SE
-                            {
-                                result[i] = '0';
-                                hasRemainig = true;
-                            }
-                            else // 0SA
-                            {
-                                result[i] = '0';
-                                hasRemainig = false;
-                            }
-                        }
-                    }
-                    else //FARKLI
-                    {
-                        if (hasRemainig) //ELDE VARSA
-                        {
-                            result[i] = '0';
-                        }
-                        else //ELDE YOKSA
-                        {
-                            result[i] = '1';
-                        }
-                    }
-                }
-            }
-
-            foreach (var c in result)
-            {
-                Console.Write(c);
-            }
-            return " ";
+            char[] resultArray = result.ToString().ToCharArray();
+            Array.Reverse(resultArray);
+            return new string(resultArray);
         }
     }
 }
